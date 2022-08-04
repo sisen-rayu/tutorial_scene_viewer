@@ -6,17 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo Scene Viewer</title>
   <style>
+    body {
+      position: relative;
+    }
     .canvas {
       display: block;
       margin: auto;
       width: 100%;
-      height: 80vh;
+      height: 100vh;
       position: fixed;
+    }
+    .qr {
+      position: sticky;
+      bottom: 0;
+      right: 0;
+      width: 147px;
     }
   </style>
 </head>
 <body>
-  <!-- <model-viewer src="assets/3d/hagaki.glb" alt="Happy New Year 2020 by unshift" background-color="#f5a742" shadow-intensity="0.8" ar="" ar-scale="auto" magic-leap="" camera-controls="" quick-look-browsers="safari chrome" style="width: 100%; height: 100%; position: fixed" ar-status="not-presenting"></model-viewer> -->
   <!-- orbit:カメラの角度と距離(左右向き,上下,モデルの距離), target:カメラの中心点(モデルの回転がカメラを軸に行われているから回転の軸も変化する)-->
   <model-viewer
     src="img/tutorial_blender.glb"
@@ -33,6 +41,7 @@
     class="canvas">
   </model-viewer>
   <button class="above_button">View from above</button>
+  <div class="qr"><img src="img/qr_scene_viewer.png" alt=""></div>
   <script type="module" src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer.js"></script>
   <script src="js/changeViewPoint.js"></script>
 </body>
